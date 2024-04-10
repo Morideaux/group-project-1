@@ -9,24 +9,38 @@
   <body>
   
     <div class="container">
-        
-        <div class="hero hero-body">
-            <h1 class="title has-text-centered is-underlined">Jepordy</h1>
-            <h2 class="subtitle has-text-centered">Created By: Austin Hurst, Austin Segar, Daniel Fyerman, and Meish Hamilton </h2>
-            <div class="field">
-                <label class="label has-text-centered is-underlined">Name:</label>
-                <div class="control">
-                <input class="input has-text-centered" type="text" placeholder="Username">
-                </div>
-            </div>
-            
-            <div class="field">
-                <label class="label is-horizontal has-text-centered is-underlined">Email:</label>
-                <div class="control">
-                <input class="input has-text-centered" type="gameCode" placeholder="Game Code">
-                </div>
-            </div>
-        </div>
+        <form id="form">
+          <div class="hero hero-body">
+              <h1 class="title has-text-centered is-underlined">Jepordy</h1>
+              <h2 class="subtitle has-text-centered">Created By: Austin Hurst, Austin Segar, Daniel Fyerman, and Meish Hamilton </h2>
+              <div class="field">
+                  <label class="label has-text-centered is-underlined">Name:</label>
+                  <div class="control">
+                  <input class="input has-text-centered" type="text" placeholder="Username">
+                  </div>
+              </div>
+              
+              <div class="field">
+                  <label class="label is-horizontal has-text-centered is-underlined">Email:</label>
+                  <div class="control">
+                  <input class="input has-text-centered" type="gameCode" placeholder="Game Code">
+                  </div>
+              </div>
+              <div class="control">
+                <label class="label has-text-centered is-underlined is-bold text-is-green ">
+                <input id="submit" class="has-background-link-light" type="submit" value="Let's Play">
+                </label>
+              </div>
+          </div>
+        </form>
     </div>
+    <script>
+   form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+
+    window.location.href = "game.html";
+});
+    </script>
   </body>
 </html>
