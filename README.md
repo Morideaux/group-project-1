@@ -53,5 +53,6 @@ If you would like to enhance the project for others feel free to submit changes 
     "Austin Hurst"
     "Austin Seger"
     "Daniel Fyerman"
+    "Meish Hamilton"
 }
 
