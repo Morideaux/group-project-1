@@ -61,3 +61,7 @@ div.content {
     text-shadow: -1px 0 var(--yellow-text-border), 0 1px var(--yellow-text-border), 1px 0 var(--yellow-text-border), 0 -1px;
     background-color: var(--jeopardy-title-color-bkgrd);
 }
+
+input.submit{
+    color:red;
+}
