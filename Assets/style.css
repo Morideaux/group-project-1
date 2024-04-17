@@ -8,6 +8,8 @@
     --cool-bkgrd-color:          #b5d1cc;
     --general-text-color:        #1b3644;
     --incorrect-text-color:      #a10b2b;
+    --subtext-contributors:      #09516375;
+    --subtle-shadow:             #405c635b;
 };
 
 .question-formating {
@@ -41,9 +43,17 @@ h1.title {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;
     color: var(--yellow-text);
-    text-shadow: -1px 0 var(--yellow-text-border), 0 1px var(--yellow-text-border), 1px 0 var(--yellow-text-border), 0 -1px;
+    text-shadow: -1px 0 var(--yellow-text-border), 0 1px var(--yellow-text-border), 1px 0 var(--yellow-text-border), 0 -1px var(--yellow-text-border);
     background-color: var(--jeopardy-title-color-bkgrd);
 }
+
+h2.subtitle {
+    font-size: x-small;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    color: var(--subtext-contributors);
+    text-shadow: 0,0, -1px 0 var(--subtle-shadow), 0 1px var(--subtle-shadow);
+};
 
 div.grid {
     border: solid black;
