@@ -160,20 +160,3 @@ fetch('https://opentdb.com/api.php?amount=5&category=11&difficulty=easy&type=mul
     console.log(data);
   });
 
-async function parallelCall() {
-    
-    let start_time = new Date().getTime();
-    let promises = [];
-    let result = [];
-  
-    let currentPage = 1;
-  
-    while (currentPage <= 5) {
-      promises.push(fakeApiCall(currentPage));
-      currentPage++;
-    }
-  
-    const data = await Promise.all(promises);
-    data.forEach(({ data }) => {
-      result = [result, data];
-    })}
