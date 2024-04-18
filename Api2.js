@@ -1,37 +1,89 @@
+/*
+the following chunk of varibles are in place to feth the relevant information so a string concatination
+can be formed that functions with the Trivia API.
+superposition is to set the initial link followinng that the other
+varibles are to determin what type of question
+will be called by the function based on grid position and value.
+*/
 const superposition = 'opentdb.com/api.php?amount=5&category=';
-//this is the same no matter the quiery
+let point = this.textcontent;
+const h1Elements = document.querySelectorAll('h1');
+const categoryH1Texts = [];
+let buttonId = this.id
+let type = (point > 100) ? "multiple":"boolean";
+let categoryCollumn = buttonId.substring(0, 2);
+
+if (h1Elements.id.startswith('category')) {
+    categoryH1Texts.push(h1Elements.textcontent)
+};
+//
+function setCategory(categoryCollumn) {
+      let category;
+ switch (categoryCollumn) {
+    case "1_": {
+        category = categoryH1Texts[0]
+    };
+    break;
+    case "2_": {
+        category = categoryH1Texts[1]
+    };
+    break;
+    case "3_": {
+        category = categoryH1Texts[2]
+    };
+    break;
+    case "4_": {
+        category = categoryH1Texts[3]
+    };
+    break;
+    case "5_": {
+        category = categoryH1Texts[4]
+    };
+    break;
+    case "6_": {
+        category = categoryH1Texts[5]
+    };
+    break;
+
+}
+ };
+// sets level using a switch statement based upon the value of the cell
+ function setLevel(point) {
+    let level;
+ switch (point) {
+    case 500:
+    case 400: {
+         level = ('Hard')
+        };
+        break;
+    case 300:
+    case 200: {
+        level = ('medium') 
+        } 
+        break;
+    case 100: {
+        level = ('easy')
+        }
+        break;
+    default: 'Unknown';
+}
+    return level;
+};
+
+// this function is the end result after setting the varibles
+function summonQuestion() {
+  'https://' + superposition + category + '&difficulty=' + level + '&' + type;
+};
+
+ const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        summonQuestion();
+    });
+});
+
+
+
+
  
 
-let level = event.target.this.button;
-// this is intended to get the text of the cell that contains the button.
-    
-
-
-
- let type = ('cell value' > 100) ? "multiple":"boolean";
-
- //makes the type for any 100 question boolean
-
- const category = event.target.parentNode.parentNode.StaticText
- //may need to rearrange the html to make the cells cillderen of their respective catagory
-
- // or use catagory id. added when the function is called? so, on button push, thats a lot of buttons giving each button a class per may be faster
-
-switch (level) { // level setting as a switch
-    case 1:
-        if (500 || 400) ['Hard']
-        break;
-
-    default:
-        break;
-    case 2:
-        if (300 || 200)  ['medium']
-        break;
-    case 3:
-        if (100) ['easy']
-} ; 
-
-this.button.onclick = function() {
-  'https://' + superposition + category + '&difficulty=' + level + '&' + type;
-}
-// function that concatinates the link for the api fetch on button push.
