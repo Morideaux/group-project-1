@@ -2,14 +2,14 @@ const superposition = 'opentdb.com/api.php?amount=5&category=';
 //this is the same no matter the quiery
  
 
-const level = event.target.this.button;
+let level = event.target.this.button;
 // this is intended to get the text of the cell that contains the button.
     
 
 
-const type = 'multiple' {
- if 'cell value' > 100;
- else = 'boolean'}
+
+ let type = ('cell value' > 100) ? "multiple":"boolean";
+
  //makes the type for any 100 question boolean
 
  const category = event.target.parentNode.parentNode.StaticText
@@ -17,20 +17,19 @@ const type = 'multiple' {
 
  // or use catagory id. added when the function is called? so, on button push, thats a lot of buttons giving each button a class per may be faster
 
-switch.level { // level setting as a switch
+switch (level) { // level setting as a switch
     case 1:
-        500 or 400 = 'Hard'
+        if (500 || 400) ['Hard']
         break;
 
     default:
         break;
     case 2:
-        300 or 200 = 'medium'
+        if (300 || 200)  ['medium']
         break;
     case 3:
-        100 = 'easy'
-        break;
-}; 
+        if (100) ['easy']
+} ; 
 
 this.button.onclick = function() {
   'https://' + superposition + category + '&difficulty=' + level + '&' + type;
