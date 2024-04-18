@@ -42,15 +42,17 @@ class GameShow {
     }
     //fetches the categories from the api, I have yet to add the api in yet. also shuffles the
     //the clues and puts 5 of them into an array for each category.
-    fetchCategories(){
-        const categories = this.useCategoryIds.map(categoryId => {
-            return new Promise((resolve,reject)) => {
-                fetch('//put api in here//')
-                .then(respone => Response.json()).then(data => {
-                    resolve(data)
-                })
-            })
-        };
+        fetchCategories() {      
+            //Fetch all of the data from the API. used a promise because without it we could potentially
+            //endlessly loop.
+            const categories = this.useCategoryIds.map(category_id => {
+               return new Promise((resolve, reject) => {
+                  fetch(//instert api here)
+                    .then(response => response.json()).then(data => {
+                        resolve(data);
+                     });
+               });
+            });
         Promise.all(categories).then(results => {
             results.forEach((category, categoryIndex) =>{
                 var newCategory = {
@@ -78,14 +80,29 @@ class GameShow {
     }
 
     //this is incomplete and will need help on the html side but it is rendering each category
-    renderCategory(category){
+    renderCategory(category) {      
         let column = document.createElement("div");
-    }
-    var ul = column.querySelector("ul")
-    category.clues.forEach(clueId => { 
-        var clue = this.clues[clueId]; 
-    })
-    this.boardElement.appendChild(column);
+        column.classList.add("column");
+        column.innerHTML = (
+           `<header>${category.title}</header>
+           <ul>
+           </ul>`
+        ).trim();
+        
+        var ul = column.querySelector("ul");
+        category.clues.forEach(clueId => {
+           var clue = this.clues[clueId];
+           ul.innerHTML += `<li><button data-clue-id=${clueId}>${clue.value}</button></li>`
+        })
+        
+        //Add to DOM
+        this.boardElement.appendChild(column);
+     }
+  
+     updateScore(change) {
+        this.score += change;
+        this.scoreCountElement.textContent = this.score;
+     }
 
     //This will handle when the numbers on the board are clicked on and has event listners.
     handleClueClick(event){
@@ -140,5 +157,5 @@ class GameShow {
     }
 
 
-const = game new GameShow(document.querySelector(".app"),{})
+const game = new GameShow(document.querySelector(".app"),{});
 game.initGame();
