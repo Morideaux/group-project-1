@@ -8,10 +8,10 @@ class GameShow {
         this.clues = {};
 
         this.currentClue = null;
-        this.score =0;
+        this.points =0;
 
         this.boardElement = element.querySelector(".board");
-        this.scoreCountElement = element.querySelector(".score-count");
+        this.pointCountElement = element.querySelector(".score-count");
         this.formElement = element.querySelector("form");
         this.inputTrueOrFalse = element.querySelector("input");
         this.modalElement = element.querySelector(".card-modal");
@@ -37,8 +37,8 @@ class GameShow {
     //upates the score by taking in variable change and adding to the current score, s
     //starting at 0
     updateScore(change) {
-        this.score += change;
-        this.scoreCountElement.textContent = this.score;
+        this.points += change;
+        this.pointCountElement.textContent = this.points;
     }
     //fetches the categories from the api, I have yet to add the api in yet. also shuffles the
     //the clues and puts 5 of them into an array for each category.
@@ -157,5 +157,5 @@ class GameShow {
     }
 
 
-const game = new GameShow(document.querySelector(".app"),{});
+var game = new GameShow(document.querySelector(".app"),{});
 game.initGame();
