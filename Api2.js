@@ -45,8 +45,37 @@ function setCategory(categoryCollumn) {
     };
     break;
 
-}
- };
+}};
+// resets the category to a number value to be pluged into the string
+function setCategoryNumber(category) {
+    let category;
+    switch (category) {
+    case "General": {
+        category = 9
+    };
+    break;
+    case "Movies": {
+        category = 11
+    };
+    break;
+    case "Geography": {
+        category = 22
+    };
+    break;
+    case "Animals": {
+        category = 27
+    };
+    break;
+    case "Science and Nature": {
+        category = 17
+    };
+    break;
+    case "History": {
+        category = 23
+    };
+    break;
+}};
+
 // sets level using a switch statement based upon the value of the cell
  function setLevel(point) {
     let level;
