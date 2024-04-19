@@ -12,5 +12,5 @@ async function sendAPiRequest(){
 }
 
 function useApiData(data){
-    document.querySelector("#question").innerHTML =  `Question: ${data.results[0].question}`
+    document.querySelector("#questionSlot").innerHTML =  `Question: ${data.results[0].question}`
 }
